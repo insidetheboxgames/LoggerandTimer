@@ -1,0 +1,12 @@
+[Critical]: This is a test 1057415745
+[Debug]: This is a test 1057415745
+[Error]: This is a test 1057415745
+[Message]: This is a test 1057415745
+[Warn]: This is a test 1057415745
+[Message]: Timer Output
+[Message]:     Function Name    |        Total Time(ms)        |        Percentage        |        Index        |
+[Message]:       Summation      |          5.406600            |         73.535172        |          2          |  [Oct 21 23:40:31 2023] 
+[Message]: Division by Remainder|          0.001200            |         0.016321         |          1          |  [Oct 21 23:40:31 2023] 
+[Message]:          Line        |          0.000600            |         0.008161         |          3          |  [Oct 21 23:40:31 2023] 
+[Message]:     Whole Program    |          7.352400            |        100.000000        |          0          |  [Oct 21 23:40:31 2023] 
+[Warn]:                                   Unaccounted Percentages: 26.440346                                       [Oct 21 23:40:31 2023] 

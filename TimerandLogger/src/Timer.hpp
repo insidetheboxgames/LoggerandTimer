@@ -19,11 +19,11 @@ class Timer
 	};
 
 public:
+
 	Timer();
+
 	~Timer()
 	{
-		/*instance().m_Program->m_d_endTime = std::chrono::high_resolution_clock::now();
-		instance().m_Program->m_d_duration = instance().m_Program->m_d_endTime - instance().m_Program->m_d_startTime;*/
 		printReport();
 	}
 	inline static Timer& instance();

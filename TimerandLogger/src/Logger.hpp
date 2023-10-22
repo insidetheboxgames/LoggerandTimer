@@ -154,7 +154,7 @@ public:
 			interFileName.append(".txt");
 			int newLineIndex;
 			std::fstream outFile;
-			outFile.open(interFileName, std::ios::app);
+			outFile.open("LogOutput/"+interFileName, std::ios::app);
 			std::string t;
 			if (outFile.is_open())
 			{
