@@ -59,12 +59,28 @@ int Summation(int n)
 	Timer::end("Summation");
 	return result;
 }
+int tSummation(int n)
+{
+	Timer::begin("tSummation");
+
+	int result = 0;
+	for (int i = n; i >= 0; i--)
+	{
+		result += i;
+	}
+	Timer::end("tSummation");
+	return result;
+}
 
 
 int main() {
+	Summation(1000000);
 	divisionByRemainder(9845162, 50);
 	Summation(1000000);
-	Summation(9909948);
+	divisionByRemainder(9845162, 50);
+	Summation(1000000);
+	divisionByRemainder(9845162, 50);
+	Summation(1000000);
 	line(50, 80, 30, 60);
 	line(10, 80, 15, 60);
 	line(60, 20, 12, 60);

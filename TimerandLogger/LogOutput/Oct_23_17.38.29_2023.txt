@@ -1,0 +1,13 @@
+[Message]: Created cgeModel
+[Message]: Created objModel
+[Message]: Timer Output
+[Message]:     Function Name    |        Total Time(ms)        |        Percentage        |        Index        |
+[Message]:   renderGameObjects  |         228.735001           |         11.569769        |        15249        |  [Oct 23 17:38:29 2023] 
+[Message]:      Window loop     |        3852.117188           |        194.846039        |          2          |  [Oct 23 17:38:29 2023] 
+[Message]:    endswapChainPass  |         38.122498            |         1.928295         |        15249        |  [Oct 23 17:38:29 2023] 
+[Message]:      Camera Edits    |         64.045799            |         3.239536         |        15249        |  [Oct 23 17:38:29 2023] 
+[Message]:     swapChainPass    |         186.037811           |         9.410080         |        15249        |  [Oct 23 17:38:29 2023] 
+[Message]:     Whole Program    |        1977.005737           |        100.000000        |          1          |  [Oct 23 17:38:29 2023] 
+[Debug]:                                   Total Timed Percentage: 220.993713                                      [Oct 23 17:38:29 2023] 
+[Warn]:                                  Unaccounted Percentages: -120.993713                                      [Oct 23 17:38:29 2023] 
+//**			This is an example of a looped functionality the renderGameObjects is looped by the Window loop which enables this errounous result			**\\

@@ -12,6 +12,7 @@ class Timer
 		std::chrono::time_point<std::chrono::steady_clock> m_d_startTime, m_d_endTime;
 		std::chrono::duration<float> m_d_duration;
 		int m_d_index;
+		float averageCreator = 0;
 
 		//Key
 		std::string m_d_functionName;
@@ -30,7 +31,7 @@ public:
 
 	static void setTimeForFile(std::string time)
 	{
-		instance().timeForFile = time;
+		instance().m_timeForFile = time;
 	}
 
 
@@ -41,7 +42,8 @@ public:
 private:
 	static std::pair <std::string, float> createReport(std::string key, Data m_Data);
 	void getTimeInString();
-	std::string timeForFile;
+	std::string m_timeForFile;
+	float m_totalPercentage = 0;
 	void initTimer();
 	Data* m_Program;
 	std::unordered_map<std::string, Data> m_functionList;
