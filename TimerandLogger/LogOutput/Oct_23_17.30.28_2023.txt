@@ -1,0 +1,11 @@
+[Message]: Created cgeModel
+[Message]: Created objModel
+[Message]: Timer Output
+[Message]:     Function Name    |        Total Time(ms)        |        Percentage        |        Index        |
+[Message]:    endswapChainPass  |        3847.734375           |         2.744990         |       1326805       |  [Oct 23 17:30:28 2023] 
+[Message]:      Camera Edits    |        5307.220215           |         3.786194         |       1326805       |  [Oct 23 17:30:28 2023] 
+[Message]:     swapChainPass    |        21361.560547          |         15.239429        |       1326805       |  [Oct 23 17:30:28 2023] 
+[Message]:   renderGameObjects  |        24811.253906          |         17.700455        |       1326805       |  [Oct 23 17:30:28 2023] 
+[Message]:     Whole Program    |       140172.968750          |        100.000000        |          1          |  [Oct 23 17:30:28 2023] 
+[Debug]:                                    Total Timed Percentage: 39.471069                                      [Oct 23 17:30:28 2023] 
+[Warn]:                                   Unaccounted Percentages: 60.528931                                       [Oct 23 17:30:28 2023] 

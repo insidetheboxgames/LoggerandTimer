@@ -4,8 +4,9 @@
 #include<fstream>
 #include<iostream>
 #include<chrono>
+#if _MSC_VER && !__INTEL_COMPILER
 #include<Windows.h>
-
+#endif
 static enum Log_Priority
 {
 	LOG_MESSAGE,LOG_WARN,LOG_CRITICAL,LOG_ERROR,LOG_DEBUG
@@ -17,6 +18,7 @@ private:
 
 	static void log_Message(const char* message)
 	{
+#if _MSC_VER && !__INTEL_COMPILER
 		HANDLE console_handle = GetStdHandle(STD_OUTPUT_HANDLE);
 		SetConsoleTextAttribute(console_handle, 8);
 		std::string t = "[Message]: ";
@@ -27,10 +29,17 @@ private:
 		DWORD number_written = 0;
 		WriteConsoleA(GetStdHandle(STD_ERROR_HANDLE), t.c_str(), (DWORD)length, &number_written, 0);
 		SetConsoleTextAttribute(console_handle, 15);
+#else
+		std::string t = "[Message]: ";
+		t.append(message);
+		t.append(" [" + instance().getTime() + "]");
+		std::cout << tstd::endl;
+#endif
 	};
 	
 	static void log_Warn(const char* message)
 	{
+#if _MSC_VER && !__INTEL_COMPILER
 		HANDLE console_handle = GetStdHandle(STD_OUTPUT_HANDLE);
 		SetConsoleTextAttribute(console_handle, 14);
 		std::string t = "[Warning]: ";
@@ -41,10 +50,17 @@ private:
 		DWORD number_written = 0;
 		WriteConsoleA(GetStdHandle(STD_ERROR_HANDLE), t.c_str(), (DWORD)length, &number_written, 0);
 		SetConsoleTextAttribute(console_handle, 15);
+	#else
+		std::string t = "[Message]: ";
+		t.append(message);
+		t.append(" [" + instance().getTime() + "]");
+		std::cout << tstd::endl;
+	#endif
 	};
 	
 	static void log_Critical(const char* message)
 	{
+#if _MSC_VER && !__INTEL_COMPILER
 		HANDLE console_handle = GetStdHandle(STD_OUTPUT_HANDLE);
 		//Critical 4 Message 8 Warn 14 Error 3 Debug 10
 		SetConsoleTextAttribute(console_handle, 4);
@@ -56,10 +72,17 @@ private:
 		DWORD number_written = 0;
 		WriteConsoleA(GetStdHandle(STD_ERROR_HANDLE), t.c_str(), (DWORD)length, &number_written, 0);
 		SetConsoleTextAttribute(console_handle, 15);
+	#else
+		std::string t = "[Message]: ";
+		t.append(message);
+		t.append(" [" + instance().getTime() + "]");
+		std::cout << tstd::endl;
+	#endif
 	};
 	
 	static void log_Error(const char* message)
 	{
+#if _MSC_VER && !__INTEL_COMPILER
 		HANDLE console_handle = GetStdHandle(STD_OUTPUT_HANDLE);
 		SetConsoleTextAttribute(console_handle, 3);
 		std::string t = "[Error]: ";
@@ -70,10 +93,17 @@ private:
 		DWORD number_written = 0;
 		WriteConsoleA(GetStdHandle(STD_ERROR_HANDLE), t.c_str(), (DWORD)length, &number_written, 0);
 		SetConsoleTextAttribute(console_handle, 15);
+	#else
+		std::string t = "[Message]: ";
+		t.append(message);
+		t.append(" [" + instance().getTime() + "]");
+		std::cout << tstd::endl;
+	#endif
 	};
 	
 	static void log_Debug(const char* message)
 	{
+#if _MSC_VER && !__INTEL_COMPILER
 		HANDLE console_handle = GetStdHandle(STD_OUTPUT_HANDLE);
 		SetConsoleTextAttribute(console_handle, 10);
 		std::string t = "[Debug]: ";
@@ -84,6 +114,12 @@ private:
 		DWORD number_written = 0;
 		WriteConsoleA(GetStdHandle(STD_ERROR_HANDLE), t.c_str(), (DWORD)length, &number_written, 0);
 		SetConsoleTextAttribute(console_handle, 15);
+	#else
+		std::string t = "[Message]: ";
+		t.append(message);
+		t.append(" [" + instance().getTime() + "]");
+		std::cout << tstd::endl;
+	#endif
 	};
 
 
@@ -154,7 +190,7 @@ public:
 			interFileName.append(".txt");
 			int newLineIndex;
 			std::fstream outFile;
-			outFile.open(interFileName, std::ios::app);
+			outFile.open("LogOutput/"+interFileName, std::ios::app);
 			std::string t;
 			if (outFile.is_open())
 			{
