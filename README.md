@@ -1,3 +1,5 @@
+# ReadMe
+Quick little program that enables you to see how long a function took to execute along with creating a log functionality. 
 # How to use
 Take the Header of the Logger file and the Header and CPP file for the Timer and place them into your project then use them as shown below.
 The general use of these files is to keep track of how long functions take along with logging important events. An example use case for the Timer would be 
@@ -29,6 +31,7 @@ void correctAmount(int a)
 ```
 However they are also used together so at the end during the destructor of the Timer the Logger is called to output all of the Timers that were generated and what their final times where.
 *Note it is dangerous to leave a timer not closed because that may skew the time that it reports at the very end.*
+*Note 2 the Timer should not be looped upon itself because that can cause errant result as shown in [LogOutput](https://github.com/insidetheboxgames/LoggerandTimer/blob/Debugging/TimerandLogger/LogOutput/Oct_23_17.38.29_2023.txt)*
 ## Timer:
 ### Main Functionality:
 The main use case of the timer class is to time how long a function take to execute. It will track all functions that you place a Timer::begin and a Timer::end into.
@@ -58,4 +61,4 @@ This is used to get the current time but with the month day and year attached to
 #### Instance
 Works the same as the one in the Timer class. Just helps so I don't have to declare an official object every time I want to use the Logger functionality.
 #### Log
-The main log function takes in the message priority, along message string and then the Boolean output type and occasionally the filename. If the outputType input is set to 0 then the output is to be in the console. When outputting to the console it creates the console handle, sets the color of the text through the console handle. Then it appends the message at the beginning with the correct priority header. At the very end of the string it adds the time in which this was outputted and then it outputs it to the console. Otherwise it will be outputted to a file. When using time as your file name you need to remove the ' ' and the ':' characters. I do this through finding all of both and then replacing them with my replacement choice of '_ ' and '.' respectively. Then it opens the file makes sure its open and then based on the message priority will decide what header it should put on the message. Then it makes sure no extra new line characters were added and if one was it erases it. Finally it outputs to the file.
+The main log function takes in the message priority, along message string and then the Boolean output type and occasionally the filename. If the outputType input is set to 0 then the output is to be in the console. When outputting to the console it creates the console handle, sets the color of the text through the console handle. Then it appends the message at the beginning with the correct priority header. At the very end of the string it adds the time in which this was outputted and then it outputs it to the console. Otherwise it will be outputted to a file. When using time as your file name you need to remove the ' ' and the ':' characters. This table replaces  Then it opens the file makes sure its open and then based on the message priority will decide what header it should put on the message. Then it makes sure no extra new line characters were added and if one was it erases it. Finally it outputs to the file.
