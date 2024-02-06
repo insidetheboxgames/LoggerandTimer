@@ -1,7 +1,7 @@
 # ReadMe
 Quick little program that enables you to see how long a function took to execute along with creating a log functionality. 
 ### Quick little aside 
-Windows only at the moment still ironing out some bugs with cross platform compatibility.
+This is currently Windows only at the moment.
 # How to use
 Take the Header of the Logger file and the Header and CPP file for the Timer and place them into your project then use them as shown below.
 The general use of these files is to keep track of how long functions take along with logging important events. An example use case for the Timer would be 
