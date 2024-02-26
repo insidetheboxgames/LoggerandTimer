@@ -1,7 +1,9 @@
 # ReadMe
 Quick little program that enables you to see how long a function took to execute along with creating a log functionality. 
-### Quick little aside 
-This is currently Windows only at the moment.
+## Reasoning
+While working on larger projects for my Advanced Data Structures class I wanted to see the time differences between the different types of algorithms we were using.
+This led me to look into a timing system, and over the course of a weekend this project was built. It handled itself just fine in those algorithm projects,
+as well as some of my much larger rendering engine projects.
 # How to use
 Take the Header of the Logger file and the Header and CPP file for the Timer and place them into your project then use them as shown below.
 The general use of these files is to keep track of how long functions take along with logging important events. An example use case for the Timer would be 
@@ -54,8 +56,6 @@ generates the look of the report when it is being outputted to a file. The way i
 This function gets the end of the time for the whole programs clock. It outputs the total duration to the console while then going on to iterate through the unordered map for function instances and creating their log output. It also calculates the main message for the entire program through createReport. Finally it calculates how much of the time was spent on things that were not able to be calculated, outputting the percentage offset.
 
 ## Logger:
-#### Dependence disclaimer
-This file is windows only because of the windows.h dependence however this is only because I wanted colored output in the console. To get rid of this dependence in Logger.hpp you need to remove the Handle declaration, the SetConsoleTextAttribute, the Dword, WriteConsoleA, and the SetConsoleTextAttribute lines and this can instead be replaced with a std::cout or what ever method out print out you would like.
 #### Main Functionality:
 This file takes in a priority, message, the output type and at times a file name. This is then translated into a log output to either a file or to the console.
 #### getTime
@@ -64,3 +64,6 @@ This is used to get the current time but with the month day and year attached to
 Works the same as the one in the Timer class. Just helps so I don't have to declare an official object every time I want to use the Logger functionality.
 #### Log
 The main log function takes in the message priority, along message string and then the Boolean output type and occasionally the filename. If the outputType input is set to 0 then the output is to be in the console. When outputting to the console it creates the console handle, sets the color of the text through the console handle. Then it appends the message at the beginning with the correct priority header. At the very end of the string it adds the time in which this was outputted and then it outputs it to the console. Otherwise it will be outputted to a file. When using time as your file name you need to remove the ' ' and the ':' characters. This table replaces  Then it opens the file makes sure its open and then based on the message priority will decide what header it should put on the message. Then it makes sure no extra new line characters were added and if one was it erases it. Finally it outputs to the file.
+
+### Quick little aside 
+This is Windows due to certian dependencies.
